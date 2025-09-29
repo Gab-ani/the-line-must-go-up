@@ -1,0 +1,182 @@
+[gd_scene load_steps=14 format=3 uid="uid://c7hv4k3od7gpo"]
+
+[ext_resource type="Script" uid="uid://dwyvf1b0c4i4w" path="res://UI/LaunchMenu.gd" id="1_24sm8"]
+[ext_resource type="Texture2D" uid="uid://b44pbi3t4m6qv" path="res://Assets/launch menu.png" id="1_rosb5"]
+[ext_resource type="Theme" uid="uid://dbsd1xgapuwxt" path="res://Assets/menu theme.tres" id="2_24sm8"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jdvoo"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.1, 0.1, 0.1, 0.3)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7n1fg"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(1, 1, 1, 0.75)
+draw_center = false
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+expand_margin_left = 2.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a1l12"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.225, 0.225, 0.225, 0.6)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f5t7h"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.1, 0.1, 0.1, 0.6)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nipkr"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0, 0, 0, 0.6)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[sub_resource type="SystemFont" id="SystemFont_53nkn"]
+font_names = PackedStringArray("Bodoni MT")
+
+[sub_resource type="Theme" id="Theme_53nkn"]
+default_font = SubResource("SystemFont_53nkn")
+default_font_size = 40
+Button/colors/font_color = Color(0, 0, 0, 1)
+Button/colors/font_disabled_color = Color(0.31061712, 0.31061712, 0.3106171, 0.5019608)
+Button/colors/font_focus_color = Color(0, 0, 0, 1)
+Button/colors/font_hover_color = Color(0, 0, 0, 1)
+Button/colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+Button/colors/font_outline_color = Color(0, 0, 0, 1)
+Button/colors/font_pressed_color = Color(1, 1, 1, 1)
+Button/colors/icon_disabled_color = Color(1, 1, 1, 0.4)
+Button/colors/icon_focus_color = Color(1, 1, 1, 1)
+Button/colors/icon_hover_color = Color(1, 1, 1, 1)
+Button/colors/icon_hover_pressed_color = Color(1, 1, 1, 1)
+Button/colors/icon_normal_color = Color(1, 1, 1, 1)
+Button/colors/icon_pressed_color = Color(1, 1, 1, 1)
+Button/constants/align_to_largest_stylebox = 0
+Button/constants/h_separation = 4
+Button/constants/icon_max_width = 0
+Button/constants/outline_size = 0
+Button/styles/disabled = SubResource("StyleBoxFlat_jdvoo")
+Button/styles/focus = SubResource("StyleBoxFlat_7n1fg")
+Button/styles/hover = SubResource("StyleBoxFlat_a1l12")
+Button/styles/normal = SubResource("StyleBoxFlat_f5t7h")
+Button/styles/pressed = SubResource("StyleBoxFlat_nipkr")
+
+[sub_resource type="LabelSettings" id="LabelSettings_1d1wu"]
+font_size = 25
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="SystemFont" id="SystemFont_24sm8"]
+font_names = PackedStringArray("Bodoni MT")
+
+[sub_resource type="Theme" id="Theme_jdvoo"]
+default_font = SubResource("SystemFont_24sm8")
+default_font_size = 25
+
+[node name="LaunchMenu" type="Node2D"]
+script = ExtResource("1_24sm8")
+
+[node name="LaunchMenu" type="Sprite2D" parent="."]
+position = Vector2(321, 321)
+texture = ExtResource("1_rosb5")
+
+[node name="Continue" type="Button" parent="."]
+offset_left = 139.0
+offset_top = 412.0
+offset_right = 335.0
+offset_bottom = 469.0
+theme = SubResource("Theme_53nkn")
+text = "continue
+"
+
+[node name="NewGame" type="Button" parent="."]
+offset_left = 282.0
+offset_top = 310.0
+offset_right = 478.0
+offset_bottom = 367.0
+theme = SubResource("Theme_53nkn")
+text = "new game
+"
+
+[node name="Label" type="Label" parent="."]
+offset_left = 275.0
+offset_top = 150.0
+offset_right = 607.0
+offset_bottom = 317.0
+theme = ExtResource("2_24sm8")
+text = "WASD to run
+SPACE to jump
+You can wall jump
+Map borders snake-teleport you
+"
+label_settings = SubResource("LabelSettings_1d1wu")
+
+[node name="Difficulty" type="OptionButton" parent="."]
+offset_left = 29.0
+offset_top = 517.0
+offset_right = 232.0
+offset_bottom = 563.0
+theme = SubResource("Theme_jdvoo")
+selected = 2
+item_count = 4
+popup/item_0/text = "parkour"
+popup/item_0/id = 0
+popup/item_1/text = "low"
+popup/item_1/id = 1
+popup/item_2/text = "medium"
+popup/item_2/id = 2
+popup/item_3/text = "gl hf"
+popup/item_3/id = 3
+
+[node name="difficulty label" type="Label" parent="."]
+offset_left = 50.0
+offset_top = 573.0
+offset_right = 382.0
+offset_bottom = 740.0
+theme = ExtResource("2_24sm8")
+text = "select dificulty
+"
+label_settings = SubResource("LabelSettings_1d1wu")
+
+[connection signal="pressed" from="Continue" to="." method="_on_continue_pressed"]
+[connection signal="pressed" from="NewGame" to="." method="_on_new_game_pressed"]

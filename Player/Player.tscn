@@ -1,0 +1,172 @@
+[gd_scene load_steps=20 format=3 uid="uid://w5k7ac8hqyv3"]
+
+[ext_resource type="Script" uid="uid://dbbxy7im0e268" path="res://Player/PlayerCharacter.gd" id="1_q3lat"]
+[ext_resource type="Script" uid="uid://cvwf1wwi3vutv" path="res://Player/AreaAwareness.gd" id="3_0j2ni"]
+[ext_resource type="Script" uid="uid://b5gr5dw008x5f" path="res://Player/StateMachine/Model.gd" id="3_ddoul"]
+[ext_resource type="Script" uid="uid://d35sjn4uveyqr" path="res://Player/Input/InputGatherer.gd" id="3_tok1r"]
+[ext_resource type="Script" uid="uid://8vddjlgmqlwj" path="res://Player/StateMachine/Idle.gd" id="4_8g4oa"]
+[ext_resource type="Script" uid="uid://1tv7m1ae6c4m" path="res://Player/StateMachine/Run.gd" id="5_j23h2"]
+[ext_resource type="Script" uid="uid://cjwb13vvao31j" path="res://Player/StateMachine/Jump.gd" id="6_0j2ni"]
+[ext_resource type="Script" uid="uid://ox34ojh0488e" path="res://Player/StateMachine/Midair.gd" id="7_v0k0e"]
+[ext_resource type="Script" uid="uid://br0vo1o2fhb85" path="res://Player/StateMachine/Cling.gd" id="8_5wa8t"]
+[ext_resource type="Texture2D" uid="uid://cb2qb5vt6gvva" path="res://Assets/player spritesheet.png" id="10_0j2ni"]
+[ext_resource type="Script" uid="uid://vk1sdgxsxxpc" path="res://Player/PlayerHurtbox.gd" id="11_v0k0e"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ea2gk"]
+size = Vector2(14, 28)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5wa8t"]
+size = Vector2(18, 34)
+
+[sub_resource type="Animation" id="Animation_v0k0e"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Visuals:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_dm7nj"]
+resource_name = "cliing"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Visuals:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [5]
+}
+
+[sub_resource type="Animation" id="Animation_0j2ni"]
+resource_name = "idle"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Visuals:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 1]
+}
+
+[sub_resource type="Animation" id="Animation_p7tob"]
+resource_name = "midair"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Visuals:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [4]
+}
+
+[sub_resource type="Animation" id="Animation_5wa8t"]
+resource_name = "run"
+length = 0.3
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Visuals:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.15),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [2, 3]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_dm7nj"]
+_data = {
+&"RESET": SubResource("Animation_v0k0e"),
+&"cling": SubResource("Animation_dm7nj"),
+&"idle": SubResource("Animation_0j2ni"),
+&"midair": SubResource("Animation_p7tob"),
+&"run": SubResource("Animation_5wa8t")
+}
+
+[node name="Player" type="CharacterBody2D"]
+collision_layer = 2
+script = ExtResource("1_q3lat")
+
+[node name="Input" type="Node" parent="."]
+script = ExtResource("3_tok1r")
+
+[node name="AreaAwareness" type="Node" parent="."]
+script = ExtResource("3_0j2ni")
+gravity = 1000.0
+
+[node name="Model" type="Node" parent="."]
+script = ExtResource("3_ddoul")
+
+[node name="Idle" type="Node" parent="Model"]
+script = ExtResource("4_8g4oa")
+move_name = &"idle"
+animation = &"idle"
+
+[node name="Run" type="Node" parent="Model"]
+script = ExtResource("5_j23h2")
+move_name = &"run"
+animation = &"run"
+
+[node name="Jump" type="Node" parent="Model"]
+script = ExtResource("6_0j2ni")
+vertical_acceleration = 1500.0
+horizontal_acceleration = 750.0
+move_name = &"jump"
+animation = &"midair"
+
+[node name="Midair" type="Node" parent="Model"]
+script = ExtResource("7_v0k0e")
+max_horizontal_speed = 150.0
+move_name = &"midair"
+animation = &"midair"
+
+[node name="Cling" type="Node" parent="Model"]
+script = ExtResource("8_5wa8t")
+move_name = &"cling"
+animation = &"cling"
+
+[node name="Visuals" type="Sprite2D" parent="."]
+texture = ExtResource("10_0j2ni")
+hframes = 6
+
+[node name="PhysCollider" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_ea2gk")
+
+[node name="Hurtbox" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 13
+script = ExtResource("11_v0k0e")
+
+[node name="Collider" type="CollisionShape2D" parent="Hurtbox"]
+shape = SubResource("RectangleShape2D_5wa8t")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_dm7nj")
+}
+
+[connection signal="body_entered" from="Hurtbox" to="Hurtbox" method="_on_body_entered"]

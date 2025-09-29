@@ -1,0 +1,10 @@
+{
+	"coins_to_spawn": 10,
+	"ghosts_to_spawn": 5,
+	"acceleration": 2.0,
+	"angry_speed": 150.0,
+	"lost_chase_duration": 2.0,
+	"player_detection_radius": 200.0,
+	"player_loss_radius": 300.0,
+	"wandering_speed": 70.0
+}

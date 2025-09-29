@@ -1,0 +1,169 @@
+[gd_scene load_steps=14 format=3 uid="uid://bdhgwtdpvbr7q"]
+
+[ext_resource type="Texture2D" uid="uid://i7k8xvw2kcg0" path="res://Assets/loss menu.png" id="1_6gihb"]
+[ext_resource type="Script" uid="uid://dqvn1lqxp0rou" path="res://UI/LossMenu.gd" id="1_hkdib"]
+[ext_resource type="Theme" uid="uid://dbsd1xgapuwxt" path="res://Assets/menu theme.tres" id="3_oh7ta"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oh7ta"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.1, 0.1, 0.1, 0.3)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gbucs"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(1, 1, 1, 0.75)
+draw_center = false
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+expand_margin_left = 2.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wm8vr"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.225, 0.225, 0.225, 0.6)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8g4kr"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.1, 0.1, 0.1, 0.6)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cbi2a"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0, 0, 0, 0.6)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[sub_resource type="SystemFont" id="SystemFont_grp2t"]
+font_names = PackedStringArray("Bodoni MT")
+subpixel_positioning = 0
+
+[sub_resource type="Theme" id="Theme_hkdib"]
+default_font = SubResource("SystemFont_grp2t")
+default_font_size = 40
+Button/colors/font_color = Color(0, 0, 0, 1)
+Button/colors/font_disabled_color = Color(0.31061712, 0.31061712, 0.3106171, 0.5019608)
+Button/colors/font_focus_color = Color(0, 0, 0, 1)
+Button/colors/font_hover_color = Color(0, 0, 0, 1)
+Button/colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+Button/colors/font_outline_color = Color(0, 0, 0, 1)
+Button/colors/font_pressed_color = Color(1, 1, 1, 1)
+Button/colors/icon_disabled_color = Color(1, 1, 1, 0.4)
+Button/colors/icon_focus_color = Color(1, 1, 1, 1)
+Button/colors/icon_hover_color = Color(1, 1, 1, 1)
+Button/colors/icon_hover_pressed_color = Color(1, 1, 1, 1)
+Button/colors/icon_normal_color = Color(1, 1, 1, 1)
+Button/colors/icon_pressed_color = Color(1, 1, 1, 1)
+Button/constants/align_to_largest_stylebox = 0
+Button/constants/h_separation = 4
+Button/constants/icon_max_width = 0
+Button/constants/outline_size = 0
+Button/styles/disabled = SubResource("StyleBoxFlat_oh7ta")
+Button/styles/focus = SubResource("StyleBoxFlat_gbucs")
+Button/styles/hover = SubResource("StyleBoxFlat_wm8vr")
+Button/styles/normal = SubResource("StyleBoxFlat_8g4kr")
+Button/styles/pressed = SubResource("StyleBoxFlat_cbi2a")
+
+[sub_resource type="SystemFont" id="SystemFont_gbucs"]
+font_names = PackedStringArray("Bodoni MT")
+
+[sub_resource type="Theme" id="Theme_wm8vr"]
+default_font = SubResource("SystemFont_gbucs")
+default_font_size = 25
+
+[sub_resource type="LabelSettings" id="LabelSettings_8g4kr"]
+font_size = 25
+font_color = Color(0, 0, 0, 1)
+
+[node name="LossMenu" type="Node2D"]
+script = ExtResource("1_hkdib")
+
+[node name="LossMenu" type="Sprite2D" parent="."]
+position = Vector2(320, 320)
+texture = ExtResource("1_6gihb")
+
+[node name="NewGame" type="Button" parent="."]
+offset_left = 341.0
+offset_top = 245.0
+offset_right = 603.0
+offset_bottom = 302.0
+theme = SubResource("Theme_hkdib")
+text = "return stronger"
+
+[node name="Exit" type="Button" parent="."]
+offset_left = 279.0
+offset_top = 479.0
+offset_right = 528.0
+offset_bottom = 536.0
+theme = SubResource("Theme_hkdib")
+text = "leave in shame
+"
+
+[node name="Difficulty" type="OptionButton" parent="."]
+offset_left = 375.0
+offset_top = 325.0
+offset_right = 578.0
+offset_bottom = 371.0
+theme = SubResource("Theme_wm8vr")
+selected = 2
+item_count = 4
+popup/item_0/text = "parkour"
+popup/item_0/id = 0
+popup/item_1/text = "low"
+popup/item_1/id = 1
+popup/item_2/text = "medium"
+popup/item_2/id = 2
+popup/item_3/text = "gl hf"
+popup/item_3/id = 3
+
+[node name="difficulty label" type="Label" parent="."]
+offset_left = 396.0
+offset_top = 382.0
+offset_right = 728.0
+offset_bottom = 549.0
+theme = ExtResource("3_oh7ta")
+text = "select dificulty
+"
+label_settings = SubResource("LabelSettings_8g4kr")
+
+[connection signal="pressed" from="NewGame" to="." method="_on_new_game_pressed"]
+[connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]

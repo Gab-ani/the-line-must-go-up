@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://cj1p0yhv8a8gx"]
+
+[ext_resource type="Script" uid="uid://bjojm0v8kqil8" path="res://Terrain/Economy/Coin.gd" id="1_03hq4"]
+[ext_resource type="Texture2D" uid="uid://c0btdkcf6lm2f" path="res://Assets/coin.png" id="1_wro5r"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_03hq4"]
+radius = 8.0
+
+[node name="Coin" type="Area2D"]
+collision_layer = 8
+collision_mask = 2
+script = ExtResource("1_03hq4")
+
+[node name="CoinVisuals" type="Sprite2D" parent="."]
+position = Vector2(8, 8)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_wro5r")
+
+[node name="Collider" type="CollisionShape2D" parent="."]
+position = Vector2(8, 8)
+shape = SubResource("CircleShape2D_03hq4")

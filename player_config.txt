@@ -1,0 +1,23 @@
+{
+	"area_awareness": {
+		"cling_cooldown": 0.3,
+		"gravity": 1000.0
+	},
+	"cling": {
+		"drag_down_speed": 100.0
+	},
+	"jump": {
+		"horizontal_acceleration": 750.0,
+		"jump_up_duration": 0.2,
+		"vertical_acceleration": 1500.0
+	},
+	"midair": {
+		"acceleration": 2000.0,
+		"max_horizontal_speed": 150.0
+	},
+	"run": {
+		"acceleration": 1000.0,
+		"acceleration_period": 0.5,
+		"max_speed": 150.0
+	}
+}

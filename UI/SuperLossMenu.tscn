@@ -1,0 +1,208 @@
+[gd_scene load_steps=15 format=3 uid="uid://rq5he5f2sk7c"]
+
+[ext_resource type="Script" uid="uid://ncduyni4ee45" path="res://UI/SuperLoss.gd" id="1_678cu"]
+[ext_resource type="Texture2D" uid="uid://ca5r0iu6trqdt" path="res://Assets/extra loss menu.png" id="2_8jlg7"]
+[ext_resource type="Theme" uid="uid://dbsd1xgapuwxt" path="res://Assets/menu theme.tres" id="3_x0j8r"]
+
+[sub_resource type="Theme" id="Theme_678cu"]
+default_base_scale = 0.17
+default_font_size = 50
+
+[sub_resource type="LabelSettings" id="LabelSettings_fuypp"]
+font_size = 25
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oh7ta"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.1, 0.1, 0.1, 0.3)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gbucs"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(1, 1, 1, 0.75)
+draw_center = false
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+expand_margin_left = 2.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wm8vr"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.225, 0.225, 0.225, 0.6)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8g4kr"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.1, 0.1, 0.1, 0.6)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cbi2a"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0, 0, 0, 0.6)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[sub_resource type="SystemFont" id="SystemFont_grp2t"]
+font_names = PackedStringArray("Bodoni MT")
+subpixel_positioning = 0
+
+[sub_resource type="Theme" id="Theme_e4y04"]
+default_font = SubResource("SystemFont_grp2t")
+default_font_size = 40
+Button/colors/font_color = Color(0, 0, 0, 1)
+Button/colors/font_disabled_color = Color(0.31061712, 0.31061712, 0.3106171, 0.5019608)
+Button/colors/font_focus_color = Color(0, 0, 0, 1)
+Button/colors/font_hover_color = Color(0, 0, 0, 1)
+Button/colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+Button/colors/font_outline_color = Color(0, 0, 0, 1)
+Button/colors/font_pressed_color = Color(1, 1, 1, 1)
+Button/colors/icon_disabled_color = Color(1, 1, 1, 0.4)
+Button/colors/icon_focus_color = Color(1, 1, 1, 1)
+Button/colors/icon_hover_color = Color(1, 1, 1, 1)
+Button/colors/icon_hover_pressed_color = Color(1, 1, 1, 1)
+Button/colors/icon_normal_color = Color(1, 1, 1, 1)
+Button/colors/icon_pressed_color = Color(1, 1, 1, 1)
+Button/constants/align_to_largest_stylebox = 0
+Button/constants/h_separation = 4
+Button/constants/icon_max_width = 0
+Button/constants/outline_size = 0
+Button/styles/disabled = SubResource("StyleBoxFlat_oh7ta")
+Button/styles/focus = SubResource("StyleBoxFlat_gbucs")
+Button/styles/hover = SubResource("StyleBoxFlat_wm8vr")
+Button/styles/normal = SubResource("StyleBoxFlat_8g4kr")
+Button/styles/pressed = SubResource("StyleBoxFlat_cbi2a")
+
+[sub_resource type="SystemFont" id="SystemFont_gbucs"]
+font_names = PackedStringArray("Bodoni MT")
+subpixel_positioning = 0
+
+[sub_resource type="Theme" id="Theme_s5du6"]
+default_font = SubResource("SystemFont_gbucs")
+default_font_size = 25
+
+[node name="SuperLoss" type="Node2D"]
+script = ExtResource("1_678cu")
+
+[node name="ExtraLossMenu" type="Sprite2D" parent="."]
+position = Vector2(320, 320)
+texture = ExtResource("2_8jlg7")
+
+[node name="complain label" type="Label" parent="."]
+visible = false
+offset_left = 6.0
+offset_top = 12.0
+offset_right = 4283.0
+offset_bottom = 921.0
+theme = SubResource("Theme_678cu")
+text = "This message serves as formal confirmation that your recent attempt to initiate a complaint through the “Submit Complaint” interface has been registered in accordance with Section 42.9(c) of the User Engagement and Feedback Protocol, as outlined in Appendix IX of the Terms of Non-Liability (2023 Revision, Vol. 7).
+Pursuant to Clause 19.4 of our Infinite Indemnity Agreement, all complaints, inquiries, suggestions, or outbursts submitted via digital interface are automatically categorized as “Feedback for Internal Use Only” and may be used to train our machine learning models, enhance our quarterly investor briefings, or be entirely disregarded, at our sole discretion.
+Furthermore, under Subsection 3.1(a) of the Binding Arbitration Avoidance Act (BAAA), your initiation of a complaint shall not be interpreted as an invitation to dialogue, resolution, or reciprocal communication. Instead, it constitutes a non-binding suggestion, which may be safely ignored without legal consequence.
+Should you feel, despite these clarifications, an overwhelming desire to escalate your grievance through legal channels, please direct all official inquiries to our fully compliant, internationally outsourced legal liaison mailbox:
+Department of Theoretical Accountability
+℅ LegalFunnel Ltd. (Bermuda Office)
+Unit 802C, Mailbox 47
+Postbox Industrial Complex,
+North-Central Administrative Zone,
+Western Eastern Province,
+Republic of Deferred Responsibility
+ZIP: 00000-VOID
+Note: Due to a recent restructuring of our global legal footprint, all physical correspondence sent to the above address will be redirected to our paper recycling partner.
+By continuing to engage with this platform in any capacity (including but not limited to: breathing near your device, regretting your decisions, or dreaming of justice), you reaffirm your unconditional acceptance of the Master Terms of Subjugation and agree to forfeit all rights to anger, hope, or closure.
+Thank you for your complaint.
+It means absolutely everything to us."
+label_settings = SubResource("LabelSettings_fuypp")
+
+[node name="NewGame" type="Button" parent="."]
+offset_left = 335.0
+offset_top = 247.0
+offset_right = 597.0
+offset_bottom = 304.0
+theme = SubResource("Theme_e4y04")
+text = "return stronger"
+
+[node name="Exit" type="Button" parent="."]
+offset_left = 348.0
+offset_top = 442.0
+offset_right = 597.0
+offset_bottom = 499.0
+theme = SubResource("Theme_e4y04")
+text = "leave in shame
+"
+
+[node name="Difficulty" type="OptionButton" parent="."]
+offset_left = 370.0
+offset_top = 320.0
+offset_right = 573.0
+offset_bottom = 366.0
+theme = SubResource("Theme_s5du6")
+selected = 2
+item_count = 4
+popup/item_0/text = "parkour"
+popup/item_0/id = 0
+popup/item_1/text = "low"
+popup/item_1/id = 1
+popup/item_2/text = "medium"
+popup/item_2/id = 2
+popup/item_3/text = "gl hf"
+popup/item_3/id = 3
+
+[node name="difficulty label" type="Label" parent="."]
+offset_left = 397.0
+offset_top = 371.0
+offset_right = 729.0
+offset_bottom = 538.0
+theme = ExtResource("3_x0j8r")
+text = "select dificulty
+"
+label_settings = SubResource("LabelSettings_fuypp")
+
+[node name="Complain" type="Button" parent="."]
+offset_left = 377.0
+offset_top = 523.0
+offset_right = 574.0
+offset_bottom = 575.0
+theme = ExtResource("3_x0j8r")
+text = "complain"
+
+[connection signal="pressed" from="NewGame" to="." method="_on_new_game_pressed"]
+[connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="Complain" to="." method="_on_complain_pressed"]
