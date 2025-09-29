@@ -52,6 +52,7 @@ func save_game_state() -> void:
 		file_name = "res://last_game_state.txt"
 	var save_file = FileAccess.open(file_name, FileAccess.WRITE)
 	save_file.store_line(json)
+	# sdfsd f
 
 # interfaces and traits waiting room
 func load_from_save(state : Dictionary) -> void:
