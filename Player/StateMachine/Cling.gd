@@ -15,9 +15,9 @@ func check_relevance(input : InputPackage) -> StringName:
 		player.velocity.x = area_awareness.get_last_wall_normal().x * 80
 		return &"midair"
 	
-	var best_input : StringName = most_important_move(input)
-	if best_input != move_name:
-		return most_important_move(input)
+	var best_move : StringName = most_important_move(input)
+	if best_move != move_name:
+		return best_move
 	return &"continue"
 
 

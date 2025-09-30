@@ -140,9 +140,12 @@ animation = &"midair"
 
 [node name="Midair" type="Node" parent="Model"]
 script = ExtResource("7_v0k0e")
+acceleration = null
 max_horizontal_speed = 150.0
 move_name = &"midair"
 animation = &"midair"
+priority = null
+action_map = null
 
 [node name="Cling" type="Node" parent="Model"]
 script = ExtResource("8_5wa8t")

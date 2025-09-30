@@ -11,9 +11,9 @@ extends PlayerMove
 # even get the &"midair" state key by coming to this function
 func check_relevance(input : InputPackage) -> StringName:
 	translate_actions_to_moves(input)
-	var best_input :StringName = most_important_move(input)
-	if best_input != move_name:
-		return most_important_move(input)
+	var best_move :StringName = most_important_move(input)
+	if best_move != move_name:
+		return best_move
 	return &"continue"
 
 

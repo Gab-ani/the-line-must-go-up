@@ -6,7 +6,7 @@ func check_relevance(input : InputPackage) -> StringName:
 	translate_actions_to_moves(input)
 	var best_move = most_important_move(input)
 	if best_move != move_name:
-		return most_important_move(input)
+		return best_move
 	return &"continue"
 
 
