@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://n61c04eobw0n" path="res://Assets/ghost spritesheet.png" id="2_7sqyf"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_nudpe"]
+radius = 8.0
 
 [sub_resource type="Animation" id="Animation_gfikl"]
 length = 0.001
