@@ -1,5 +1,8 @@
 extends Node2D
 class_name EnemyContainer
+# Container class managing our enemy ghosts
+# It spawns them, either from saved game or randomly,
+# saves their data and holds some "collective intelligence" logic
 
 @export var player : PlayerCharacter
 @export var map : GeneratedMap
@@ -12,7 +15,8 @@ var difficulty_config : Dictionary
 #func _ready() -> void:
 	#spawn_enemies()
 
-
+# we request empty spaces from our map, then we instantiate ghosts there
+# and set their parameters as our difficulty file (already deserialized) dictates
 func spawn_enemies() -> void:
 	for i in enemies_amount:
 		var spawn_coords = map.provide_random_empty_quad(3)
